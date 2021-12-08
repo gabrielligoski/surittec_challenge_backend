@@ -1,6 +1,7 @@
 package com.surittec.surittec_challenge_backend.model;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -13,6 +14,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import lombok.Data;
+
+@Data
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name = "person")
 public class Person {
@@ -26,16 +30,16 @@ public class Person {
     @Column(name = "cpf")
     private Long cpf;
 
-    @OneToOne
+    @OneToOne(cascade= CascadeType.PERSIST)
     @JoinColumn(name = "address_id")
     private Address address;
 
-    @OneToMany
-    @JoinColumn(name = "phone_id")
+    @OneToMany(cascade=CascadeType.PERSIST)
+    @JoinColumn(name = "person_id")
     private List<Phone> phone;
 
     @ElementCollection
-    @CollectionTable(name = "email_list", joinColumns = @JoinColumn(name = "id"))
+    @CollectionTable(name = "emails", joinColumns = @JoinColumn(name = "id"))
     @Column(name = "email")
     private List<String> email;
 

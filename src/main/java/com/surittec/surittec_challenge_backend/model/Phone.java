@@ -15,7 +15,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import com.surittec.surittec_challenge_backend.model.enumeration.PhoneType;
+import lombok.Data;
 
+@Data
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name = "phone")
 public class Phone {
