@@ -30,11 +30,11 @@ public class Person {
     @Column(name = "cpf")
     private Long cpf;
 
-    @OneToOne(cascade= CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "address_id")
     private Address address;
 
-    @OneToMany(cascade=CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "person_id")
     private List<Phone> phone;
 
