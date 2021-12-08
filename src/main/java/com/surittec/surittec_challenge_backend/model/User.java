@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity // This tells Hibernate to make a table out of this class
@@ -19,10 +21,13 @@ public class User {
     private String user;
     @Column(name = "password")
     private String password;
+    @Column(name = "role")
+    private String role;
 
-    public User(String user, String password) {
+    public User(String user, String password, String role) {
         this.user = user;
         this.password = password;
+        this.role = role;
     }
 
     public User() {
@@ -47,6 +52,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
 }

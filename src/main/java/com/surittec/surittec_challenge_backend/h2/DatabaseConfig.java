@@ -32,8 +32,8 @@ public class DatabaseConfig {
             personRepository.save(person);
         }
 
-        User commonUser = new User("comum", "123456");
-        User adminUser = new User("admin", "123456");
+        User commonUser = new User("comum", "123456", "ROLE_USER");
+        User adminUser = new User("admin", "123456", "ROLE_ADMIN");
 
         userRepository.save(commonUser);
         userRepository.save(adminUser);

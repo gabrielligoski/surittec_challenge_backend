@@ -4,6 +4,7 @@ import com.surittec.surittec_challenge_backend.h2.DatabaseConfig;
 import com.surittec.surittec_challenge_backend.model.Person;
 import com.surittec.surittec_challenge_backend.repository.PersonRepository;
 import com.surittec.surittec_challenge_backend.repository.UserRepository;
+import com.surittec.surittec_challenge_backend.security.SecurityConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;

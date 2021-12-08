@@ -23,7 +23,6 @@ public class UserResource {
         System.out.printf("REST request to get Person : {%s}%n", id);
 
 
-
         return ResponseEntity.status(HttpStatus.OK).body(personRepository.findById(id));
     }
 
