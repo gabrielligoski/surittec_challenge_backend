@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -14,10 +17,15 @@ import lombok.Data;
 @Table(name = "address")
 public class Address {
 
+    private static final long serialVersionUID = -6635468854462777693L;
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "address_id")
+    private Long addressId;
+    @OneToOne
+    @PrimaryKeyJoinColumn(name = "address_id")
+    private Person person;
     @Column(name = "zip")
     private String zip;
     @Column(name = "street")

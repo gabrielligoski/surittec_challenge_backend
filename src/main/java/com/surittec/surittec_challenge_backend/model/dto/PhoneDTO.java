@@ -10,6 +10,7 @@ import lombok.Data;
 @Data
 public class PhoneDTO implements Serializable {
 
+    private static final long serialVersionUID = -6539883214459824725L;
     private Long id;
 
     @NotNull
@@ -17,4 +18,29 @@ public class PhoneDTO implements Serializable {
 
     @NotNull
     private PhoneType type;
+
+    public PhoneDTO(Long phone, PhoneType type) {
+        this.phone = phone;
+        this.type = type;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Long getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Long phone) {
+        this.phone = phone;
+    }
+
+    public PhoneType getType() {
+        return type;
+    }
+
+    public void setType(PhoneType type) {
+        this.type = type;
+    }
 }

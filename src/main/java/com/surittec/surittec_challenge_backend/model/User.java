@@ -7,8 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import lombok.Data;
+
+@Data
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name = "user")
 public class User {
@@ -17,6 +21,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
+
     @Column(name = "user")
     private String user;
     @Column(name = "password")

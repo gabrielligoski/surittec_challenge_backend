@@ -1,19 +1,13 @@
 package com.surittec.surittec_challenge_backend.model;
 
-import java.util.List;
-import javax.persistence.CollectionTable;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-
 import com.surittec.surittec_challenge_backend.model.enumeration.PhoneType;
 import lombok.Data;
 
@@ -21,6 +15,8 @@ import lombok.Data;
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name = "phone")
 public class Phone {
+
+    private static final long serialVersionUID = -8216983684440262358L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

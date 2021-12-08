@@ -12,17 +12,17 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import lombok.Data;
-
-@Data
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name = "person")
 public class Person {
 
+    private static final long serialVersionUID = -1731767811233285377L;
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
     @Column(name = "name")
@@ -53,6 +53,10 @@ public class Person {
 
     public Person() {
 
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getName() {
