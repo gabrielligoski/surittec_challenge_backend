@@ -47,15 +47,15 @@ public class PersonResource {
         return ResponseEntity.status(HttpStatus.OK).body(person);
     }
 
-    @PostMapping("/person")
-    public ResponseEntity<Object> getAllPersons(){
-        System.out.printf("REST request to get all Persons");
-        List<Person> person = personRepository.findAll();
-
-        if(person.isEmpty())
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-
-        return ResponseEntity.status(HttpStatus.OK).body(person);
-    }
+//    @PostMapping("/person")
+//    public ResponseEntity<Object> getAllPersons(){
+//        System.out.printf("REST request to get all Persons");
+//        List<Person> person = personRepository.findAll();
+//
+//        if(person.isEmpty())
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+//
+//        return ResponseEntity.status(HttpStatus.OK).body(person);
+//    }
 
 }
