@@ -1,10 +1,16 @@
 package com.surittec.surittec_challenge_backend.model;
 
+import java.util.List;
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity // This tells Hibernate to make a table out of this class
@@ -19,14 +25,21 @@ public class Person {
     private String name;
     @Column(name = "cpf")
     private Long cpf;
-    @Column(name = "address")
-    private String address;
-    @Column(name = "phone")
-    private Long phone;
-    @Column(name = "email")
-    private String email;
 
-    public Person(String name, Long cpf, String address, Long phone, String email) {
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
+
+    @OneToMany
+    @JoinColumn(name = "phone_id")
+    private List<Phone> phone;
+
+    @ElementCollection
+    @CollectionTable(name = "email_list", joinColumns = @JoinColumn(name = "id"))
+    @Column(name = "email")
+    private List<String> email;
+
+    public Person(String name, Long cpf, Address address, List<Phone> phone, List<String> email) {
         this.name = name;
         this.cpf = cpf;
         this.address = address;
@@ -36,10 +49,6 @@ public class Person {
 
     public Person() {
 
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public String getName() {
@@ -58,27 +67,27 @@ public class Person {
         this.cpf = cpf;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
-    public Long getPhone() {
+    public List<Phone> getPhone() {
         return phone;
     }
 
-    public void setPhone(Long phone) {
+    public void setPhone(List<Phone> phone) {
         this.phone = phone;
     }
 
-    public String getEmail() {
+    public List<String> getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(List<String> email) {
         this.email = email;
     }
 }
