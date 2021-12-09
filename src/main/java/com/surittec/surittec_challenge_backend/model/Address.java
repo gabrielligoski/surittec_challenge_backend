@@ -27,7 +27,7 @@ public class Address {
     @PrimaryKeyJoinColumn(name = "address_id")
     private Person person;
     @Column(name = "zip")
-    private String zip;
+    private Long zip;
     @Column(name = "street")
     private String street;
     @Column(name = "district")
@@ -39,7 +39,7 @@ public class Address {
     @Column(name = "complement")
     private String complement;
 
-    public Address(String zip, String street, String district, String city, String state, String complement) {
+    public Address(Long zip, String street, String district, String city, String state, String complement) {
         this.zip = zip;
         this.street = street;
         this.district = district;
@@ -48,7 +48,7 @@ public class Address {
         this.complement = complement;
     }
 
-    public Address(String zip, String street, String district, String city, String state) {
+    public Address(Long zip, String street, String district, String city, String state) {
         this.zip = zip;
         this.street = street;
         this.district = district;
@@ -61,11 +61,11 @@ public class Address {
 
     }
 
-    public String getZip() {
+    public Long getZip() {
         return zip;
     }
 
-    public void setZip(String zip) {
+    public void setZip(Long zip) {
         this.zip = zip;
     }
 

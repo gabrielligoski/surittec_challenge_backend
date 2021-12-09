@@ -36,7 +36,7 @@ public class DatabaseConfig {
             String name = String.format("%s%s", names[(int) (Math.random() * 10)], surnames[(int) (Math.random() * 10)]);
             Long cpf = 1L + (long) (Math.random() * (999_999_999_99L - 1L));
 
-            Address address = new Address(String.format("%s", zips[(int) (Math.random() * 5)]),
+            Address address = new Address( Long.parseLong(String.format("%s", zips[(int) (Math.random() * 5)])),
                     String.format("%s", streets[(int) (Math.random() * 10)]),
                     String.format("%s", district[(int) (Math.random() * 5)]),
                     String.format("%s", cities[(int) (Math.random() * 5)]),
