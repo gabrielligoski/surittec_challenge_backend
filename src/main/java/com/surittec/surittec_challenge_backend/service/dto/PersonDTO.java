@@ -1,4 +1,4 @@
-package com.surittec.surittec_challenge_backend.model.dto;
+package com.surittec.surittec_challenge_backend.service.dto;
 
 import java.io.Serializable;
 import java.util.List;
@@ -9,6 +9,7 @@ import com.surittec.surittec_challenge_backend.model.Address;
 import com.surittec.surittec_challenge_backend.model.Phone;
 import lombok.Data;
 
+// Tried to use DTO, but it's broken somehow
 @Data
 public class PersonDTO implements Serializable {
 

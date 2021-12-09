@@ -1,4 +1,4 @@
-package com.surittec.surittec_challenge_backend.model.dto;
+package com.surittec.surittec_challenge_backend.service.dto;
 
 import java.io.Serializable;
 
@@ -7,6 +7,7 @@ import javax.validation.constraints.Size;
 
 import lombok.Data;
 
+// Tried to use DTO, but it's broken somehow
 @Data
 public class AddressDTO implements Serializable {
 

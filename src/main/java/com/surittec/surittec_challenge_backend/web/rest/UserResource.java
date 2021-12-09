@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+// configured user's database, for register but wasn't necessary
 @RestController
 @RequestMapping("/api")
 public class UserResource {
@@ -22,8 +23,6 @@ public class UserResource {
     public ResponseEntity<Object> activateAccount(@PathVariable Long id) {
         System.out.printf("REST request to get Person : {%s}%n", id);
 
-
         return ResponseEntity.status(HttpStatus.OK).body(personRepository.findById(id));
     }
-
 }

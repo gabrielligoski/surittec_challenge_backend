@@ -5,13 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.Data;
 
+// configured user's database, for register but wasn't necessary
 @Data
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name = "user")
@@ -66,5 +64,4 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
-
 }

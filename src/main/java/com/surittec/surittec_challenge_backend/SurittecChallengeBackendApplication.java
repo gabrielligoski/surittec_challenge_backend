@@ -22,4 +22,5 @@ public class SurittecChallengeBackendApplication {
                 configurableApplicationContext.getBean(UserRepository.class);
         new DatabaseConfig(personRepository, userRepository);
     }
+
 }

@@ -1,4 +1,4 @@
-package com.surittec.surittec_challenge_backend.model.dto;
+package com.surittec.surittec_challenge_backend.service.dto;
 
 import java.io.Serializable;
 import javax.validation.constraints.NotNull;
@@ -7,6 +7,7 @@ import javax.validation.constraints.Pattern;
 import com.surittec.surittec_challenge_backend.model.enumeration.PhoneType;
 import lombok.Data;
 
+// Tried to use DTO, but it's broken somehow
 @Data
 public class PhoneDTO implements Serializable {
 
